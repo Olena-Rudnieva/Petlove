@@ -1,25 +1,8 @@
 @import-normalize; /* bring in normalize.css styles */
 
-:root {
-  --black: #121417;
-  --semiblack: #8a8a89;
-  --olive: #9fbaae;
-  --accent: #cbded3;
-  --green: #38cd3e;
-  --white: #ffffff;
-  --dark-grey: rgba(18, 20, 23, 0.7);
-  --transition: cubic-bezier(0.4, 0, 0.2, 1);
-  --background-grey: #f8f8f8;
-  --background-white: #ffffff;
-}
-
 body {
   margin: 0;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  font-style: normal;
-  line-height: 1.375;
+  font-family: 'Manrope', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
