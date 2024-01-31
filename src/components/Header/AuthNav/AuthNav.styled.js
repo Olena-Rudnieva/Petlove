@@ -5,7 +5,7 @@ import styled, { css } from 'styled-components';
 export const AuthNavWrapper = styled.div`
   display: flex;
   gap: 8px;
-  margin-right: 32px;
+  /* margin-right: 32px; */
 `;
 
 export const Link = styled(NavLink)`
