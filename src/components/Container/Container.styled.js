@@ -9,8 +9,8 @@ export const Wrapper = styled.div`
   max-width: 480px;
 
   ${theme.mq.tablet} {
-    padding-right: ${theme.space[6]};
-    padding-left: ${theme.space[6]};
+    padding-right: 32px;
+    padding-left: 32px;
     width: ${theme.breakpoints[1]};
     max-width: 100%;
   }

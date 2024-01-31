@@ -1,12 +1,11 @@
-import { Nav, StyledLink } from './Nav.styled';
+import { NavWrapper, StyledLink } from './Nav.styled';
 
-export const Navigation = () => {
+export const Nav = () => {
   return (
-    <Nav>
-      {/* <StyledLink to="/home">Home</StyledLink> */}
+    <NavWrapper>
       <StyledLink to="/news">News</StyledLink>
       <StyledLink to="/notices">Notices</StyledLink>
       <StyledLink to="/friends">Friends</StyledLink>
-    </Nav>
+    </NavWrapper>
   );
 };

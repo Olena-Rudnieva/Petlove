@@ -3,6 +3,7 @@
 body {
   margin: 0;
   font-family: 'Manrope', sans-serif;
+  font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -43,4 +44,8 @@ button {
 
 * {
   box-sizing: border-box;
+}
+
+body.modal-open {
+  overflow: hidden;
 }

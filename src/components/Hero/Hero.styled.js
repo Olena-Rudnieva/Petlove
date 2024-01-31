@@ -1,39 +1,39 @@
 import styled from 'styled-components';
+import { theme } from 'constants/theme';
 
-export const HeroWrapper = styled.div`
-  /* display: flex;
-  flex-direction: column;
-  gap: 24px;
-  margin-bottom: 20px; */
+export const HeroWrapper = styled.div``;
+
+export const TextWrapper = styled.div`
+  display: flex;
+  align-items: flex-end;
+  gap: 73px;
+  background-color: ${theme.colors.accent};
+  padding: 80px 64px 32px 64px;
+  border-radius: 60px;
 `;
 
 export const Title = styled.h1`
-  /* font-size: 48px;
-  font-weight: 500;
-  line-height: 1.167;
-  letter-spacing: -0.96px;
-  margin-bottom: 32px; */
+  color: ${theme.colors.white};
+  font-size: ${theme.fontSizes.xxxxxl};
+  font-weight: ${theme.fontWeight.bold};
+  line-height: 0.96667;
+  letter-spacing: -2.7px;
+  width: 760px;
 `;
 
 export const Text = styled.p`
-  /* font-size: 16px;
-  line-height: 1.375;
-  letter-spacing: -0.32px;
-  width: 100%;
-  margin-bottom: 64px;
+  color: ${theme.colors.white};
+  font-size: ${theme.fontSizes.s};
+  font-weight: ${theme.fontWeight.medium};
+  line-height: 1.22222;
+  letter-spacing: -0.36px;
+  width: 255px;
+`;
 
-  @media screen and (min-width: 768px) {
-    width: 471px;
-  } */
+export const Accent = styled.span`
+  color: ${theme.colors.accentHero};
 `;
 
 export const Image = styled.img`
-  /* width: 80%;
-  margin-left: auto;
-  margin-right: auto;
-
-  @media screen and (min-width: 768px) {
-    width: 568px;
-    height: 530px;
-  } */
+  border-radius: 60px;
 `;

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const LogoWrapper = styled.div`
   display: flex;
-  align-items: center;
+  align-items: flex-end;
 `;
 
 export const IconHeart = styled.svg`

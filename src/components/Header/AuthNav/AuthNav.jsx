@@ -1,10 +1,12 @@
-import { AuthNavWrapper, LogInBtn, RegistrationBtn } from './AuthNav.styled';
+import { AuthNavWrapper, Link } from './AuthNav.styled';
 
 export const AuthNav = () => {
   return (
     <AuthNavWrapper>
-      <LogInBtn>Log in</LogInBtn>
-      <RegistrationBtn>Registration</RegistrationBtn>
+      <Link to="/login">Log in</Link>
+      <Link to="/register" specialbackground="true">
+        Registration
+      </Link>
     </AuthNavWrapper>
   );
 };

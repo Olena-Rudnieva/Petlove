@@ -5,13 +5,10 @@ export const theme = {
     white: '#FFFFFF',
     black: '#262626',
     accent: '#F6B83D',
-  },
-
-  fontFamily: {
-    manrope: "'Manrope', sans-serif",
-    inter: "'Inter', sans-serif",
-    montserrat: "'Montserrat', sans-serif",
-    poppins: "'Poppins', sans-serif",
+    accentHero: 'rgba(255, 255, 255, 0.40)',
+    beige: '#FFF4DF',
+    darkBeige: '#FBE7C1',
+    grey: 'rgba(38, 38, 38, 0.15)',
   },
 
   fontWeight: {
@@ -19,6 +16,21 @@ export const theme = {
     medium: 500,
     semiBold: 600,
     bold: 700,
+  },
+
+  fontSizes: {
+    xxxxs: '8px',
+    xxxs: '12px',
+    xxs: '14px',
+    xs: '16px',
+    s: '18px',
+    m: '20px',
+    l: '24px',
+    xl: '28px',
+    xxl: '32px',
+    xxxl: '48px',
+    xxxxl: '54px',
+    xxxxxl: '90px',
   },
 
   transition: '250ms cubic-bezier(0.4, 0, 0.2, 1)',
