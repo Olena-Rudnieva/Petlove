@@ -9,12 +9,11 @@ export const theme = {
     beige: '#FFF4DF',
     darkBeige: '#FBE7C1',
     grey: 'rgba(38, 38, 38, 0.15)',
+    mediumGrey: 'rgba(38, 38, 38, 0.50)',
   },
 
   fontWeight: {
-    normal: 400,
     medium: 500,
-    semiBold: 600,
     bold: 700,
   },
 

@@ -4,10 +4,8 @@ import { List } from './NewsList.styled';
 export const NewsList = ({ news }) => {
   return (
     <List>
-      {news?.map((item, index) => (
-        <li key={index}>
-          <NewsItem item={item} />
-        </li>
+      {news?.map(item => (
+        <NewsItem key={item._id} item={item} />
       ))}
     </List>
   );

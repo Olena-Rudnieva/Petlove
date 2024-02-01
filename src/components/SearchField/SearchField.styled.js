@@ -14,7 +14,6 @@ export const FormField = styled.input`
   width: 100%;
   height: 48px;
   padding: 14px;
-  /* box-shadow: 7px 4px 7px rgba(49, 21, 4, 0.07); */
   border-radius: 30px;
   border: 1px solid ${theme.colors.grey};
   font-size: ${theme.fontSizes.xs};
