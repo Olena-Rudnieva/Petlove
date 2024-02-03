@@ -19,9 +19,9 @@ export const Image = styled.img`
   height: 100%;
 `;
 
-export const Title = styled.h2`
+export const Title = styled.h3`
   margin-bottom: 14px;
-  font-size: ${theme.fontSizes.ь};
+  font-size: ${theme.fontSizes.m};
   font-weight: ${theme.fontWeight.bold};
   line-height: 1.3;
   letter-spacing: -0.6px;

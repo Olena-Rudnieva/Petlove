@@ -1,5 +1,8 @@
 import styled from 'styled-components';
 
 export const List = styled.ul`
-  /* margin-bottom: 32px; */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px 32px;
+  margin-bottom: 60px;
 `;

@@ -4,6 +4,7 @@ export const theme = {
   colors: {
     white: '#FFFFFF',
     black: '#262626',
+    secondBlack: '##2B2B2A',
     accent: '#F6B83D',
     accentHero: 'rgba(255, 255, 255, 0.40)',
     beige: '#FFF4DF',
@@ -18,7 +19,8 @@ export const theme = {
   },
 
   fontSizes: {
-    xxxxs: '8px',
+    xxxxxs: '8px',
+    xxxxs: '10px',
     xxxs: '12px',
     xxs: '14px',
     xs: '16px',
@@ -61,7 +63,7 @@ export const theme = {
   ],
 
   boxShadow: {
-    main: '7px 4px 14px rgba(49, 21, 4, 0.07)',
+    card: '7px 4px 14px rgba(49, 21, 4, 0.07)',
     second: '7px 4px 14px rgba(0, 0, 0, 0.11)',
     notice: '0px 4px 4px rgba(0, 0, 0, 0.25)',
   },

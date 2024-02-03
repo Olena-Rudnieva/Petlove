@@ -11,7 +11,6 @@ import {
 } from './NewsItem.styled';
 
 export const NewsItem = ({ item }) => {
-  console.log(item);
   const { title, text, imgUrl, url, date } = item;
 
   return (
