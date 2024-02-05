@@ -17,6 +17,10 @@ const Notices = () => {
     dispatch(fetchNotices());
   }, [dispatch]);
 
+  const handlePageChange = selectedPage => {
+    console.log(`Selected page: ${selectedPage}`);
+  };
+
   return (
     <Section>
       <Container>
@@ -25,7 +29,7 @@ const Notices = () => {
         </TitleWrapper>
         <NoticesFilters />
         <NoticesList notices={notices} />
-        <Pagination />
+        <Pagination totalPages={10} onPageChange={handlePageChange} />
       </Container>
     </Section>
   );
