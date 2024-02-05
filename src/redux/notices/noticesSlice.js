@@ -5,6 +5,7 @@ export const noticesSlice = createSlice({
   name: 'notices',
   initialState: {
     noticesData: [],
+    totalPages: null,
     isLoading: false,
     error: null,
   },
@@ -17,6 +18,7 @@ export const noticesSlice = createSlice({
       state.isLoading = false;
       state.error = null;
       state.noticesData = action.payload.results;
+      state.totalPages = action.payload.totalPages;
     });
 
     builder.addCase(fetchNotices.rejected, (state, action) => {

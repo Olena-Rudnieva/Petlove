@@ -16,7 +16,7 @@ export const NewsItem = ({ item }) => {
   return (
     <NewsItemWrapper>
       <ImageWrapper>
-        <Image src={imgUrl} alt="News photo" />
+        <Image src={imgUrl} alt={title} />
       </ImageWrapper>
       <Title>{title}</Title>
       <Text>{text}</Text>

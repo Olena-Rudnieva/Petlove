@@ -6,9 +6,9 @@ axios.defaults.baseURL = `${BASE_URL}`;
 
 export const fetchNotices = createAsyncThunk(
   'notices/fetchNotices',
-  async (_, thunkAPI) => {
+  async (pageNumber, thunkAPI) => {
     try {
-      const response = await axios.get(`${NOTICES_URL}`);
+      const response = await axios.get(`${NOTICES_URL}?page=${pageNumber}`);
       return response.data;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);

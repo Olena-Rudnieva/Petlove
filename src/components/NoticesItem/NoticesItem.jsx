@@ -16,7 +16,7 @@ export const NoticesItem = ({ item }) => {
   return (
     <NoticesItemWrapper>
       <ImageWrapper>
-        <Image src={imgURL} alt="Pet's photo" />
+        <Image src={imgURL} alt={title} />
       </ImageWrapper>
       <Title>{title}</Title>
       <NoticesDetails item={item} />

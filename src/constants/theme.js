@@ -11,6 +11,8 @@ export const theme = {
     darkBeige: '#FBE7C1',
     grey: 'rgba(38, 38, 38, 0.15)',
     mediumGrey: 'rgba(38, 38, 38, 0.50)',
+    lightGrey: 'rgba(38, 38, 38, 0.20)',
+    paleGrey: 'rgba(38, 38, 38, 0.05)',
   },
 
   fontWeight: {
@@ -47,20 +49,6 @@ export const theme = {
     tablet: `@media screen and (min-width: ${breakpoints[1]}px)`,
     desktop: `@media screen and (min-width: ${breakpoints[2]}px)`,
   },
-
-  space: [
-    '0',
-    '4px',
-    '8px',
-    '16px',
-    '20px',
-    '24px',
-    '32px',
-    '64px',
-    '128px',
-    '256px',
-    '512px',
-  ],
 
   boxShadow: {
     card: '7px 4px 14px rgba(49, 21, 4, 0.07)',
