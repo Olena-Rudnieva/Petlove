@@ -52,7 +52,7 @@ export const theme = {
 
   boxShadow: {
     card: '7px 4px 14px rgba(49, 21, 4, 0.07)',
-    second: '7px 4px 14px rgba(0, 0, 0, 0.11)',
+    friends: '7px 4px 14px rgba(0, 0, 0, 0.11)',
     notice: '0px 4px 4px rgba(0, 0, 0, 0.25)',
   },
 };

@@ -4,10 +4,8 @@ import { List } from './FriendsList.styled';
 export const FriendsList = ({ friends }) => {
   return (
     <List>
-      {friends?.map((item, index) => (
-        <li key={index}>
-          <FriendsItem item={item} />
-        </li>
+      {friends?.map(item => (
+        <FriendsItem key={item._id} item={item} />
       ))}
     </List>
   );
