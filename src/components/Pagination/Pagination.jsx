@@ -1,8 +1,8 @@
-import { useState } from 'react';
-import { Icon, IconWrapper, StyledReactPaginate } from './Pagination.styled';
+// import { useState } from 'react';
+import { StyledReactPaginate } from './Pagination.styled';
 import sprite from '../../images/sprite.svg';
 
-export const Pagination = ({ totalPages, onPageChange, selectedPage }) => {
+export const Pagination = ({ totalPages, onPageChange }) => {
   // const [currentPage, setCurrentPage] = useState(0);
 
   // console.log(currentPage);
@@ -14,13 +14,11 @@ export const Pagination = ({ totalPages, onPageChange, selectedPage }) => {
   // };
 
   // const handleFirstPageClick = () => {
-  //   setCurrentPage(0);
-  //   onPageChange(1, true);
+  //   onPageChange(0);
   // };
 
   // const handleLastPageClick = () => {
-  //   setCurrentPage(totalPages - 1);
-  //   onPageChange(totalPages, true);
+  //   onPageChange(totalPages - 1);
   // };
 
   return (

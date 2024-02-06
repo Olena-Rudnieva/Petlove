@@ -5,17 +5,29 @@ import { SearchField } from 'components/SearchField/SearchField';
 import { Title } from 'components/Title/Title';
 import { Section, Wrapper } from './News.styled';
 import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { fetchNews } from '../../redux/news/newsOperations';
-import { selectNews } from '../../redux/news/newsSelectors';
+import { selectNews, selectTotalPages } from '../../redux/news/newsSelectors';
+import { topScroll } from 'utils/topScroll';
 
 const News = () => {
+  const [selectedPage, setSelectedPage] = useState(1);
   const dispatch = useDispatch();
   const news = useSelector(selectNews);
+  const totalPages = useSelector(selectTotalPages);
+
+  const handlePageChange = e => {
+    // console.log(`Selected page: ${page}`);
+    // setSelectedPage(page);
+    setSelectedPage(e.selected + 1);
+    topScroll();
+  };
+
+  console.log(selectedPage);
 
   useEffect(() => {
-    dispatch(fetchNews());
-  }, [dispatch]);
+    dispatch(fetchNews(selectedPage));
+  }, [dispatch, selectedPage]);
 
   return (
     <Section>
@@ -25,7 +37,7 @@ const News = () => {
           <SearchField />
         </Wrapper>
         <NewsList news={news} />
-        <Pagination />
+        <Pagination totalPages={totalPages} onPageChange={handlePageChange} />
       </Container>
     </Section>
   );

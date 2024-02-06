@@ -5,7 +5,7 @@ import { Title } from 'components/Title/Title';
 const Friends = () => {
   return (
     <Container>
-      <Title />
+      <Title name={'Our friends'} />
       <FriendsList />
     </Container>
   );

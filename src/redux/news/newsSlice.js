@@ -5,6 +5,7 @@ export const newsSlice = createSlice({
   name: 'news',
   initialState: {
     newsData: [],
+    totalPages: null,
     isLoading: false,
     error: null,
   },
@@ -17,6 +18,7 @@ export const newsSlice = createSlice({
       state.isLoading = false;
       state.error = null;
       state.newsData = action.payload.results;
+      state.totalPages = action.payload.totalPages;
     });
 
     builder.addCase(fetchNews.rejected, (state, action) => {

@@ -14,12 +14,20 @@ export const StyledReactPaginate = styled(ReactPaginate)`
     justify-content: center;
     align-items: center;
     margin: 0 5px;
+    font-size: ${theme.fontSizes.s};
+    font-weight: ${theme.fontWeight.bold};
+    line-height: 1.22222;
     width: 44px;
     height: 44px;
     border: 1px solid ${theme.colors.paleGrey};
     border-radius: 50%;
     padding: 11px 16px;
     cursor: pointer;
+    &.active {
+      background-color: ${theme.colors.accent};
+      border-color: ${theme.colors.accent};
+      color: ${theme.colors.white};
+    }
   }
 
   .active {
