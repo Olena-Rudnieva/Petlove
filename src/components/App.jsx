@@ -11,6 +11,7 @@ const Friends = lazy(() => import('../pages/Friends/Friends'));
 const Registration = lazy(() => import('../pages/Registration/Registration'));
 const Login = lazy(() => import('../pages/Login/Login'));
 const Profile = lazy(() => import('../pages/Profile/Profile'));
+const NotFound = lazy(() => import('../pages/NotFound/NotFound'));
 
 export const App = () => {
   return (
@@ -25,7 +26,7 @@ export const App = () => {
           <Route path="/register" element={<Registration />} />
           <Route path="/login" element={<Login />} />
           <Route path="/profile" element={<Profile />} />
-          <Route path="*" element={<Home />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
       <ToastContainer />
