@@ -10,6 +10,7 @@ export const theme = {
     beige: '#FFF4DF',
     darkBeige: '#FBE7C1',
     grey: 'rgba(38, 38, 38, 0.15)',
+    darkGrey: 'rgba(38, 38, 38, 0.80)',
     mediumGrey: 'rgba(38, 38, 38, 0.50)',
     lightGrey: 'rgba(38, 38, 38, 0.20)',
     paleGrey: 'rgba(38, 38, 38, 0.05)',

@@ -1,3 +1,10 @@
+import { Title } from 'components/Title/Title';
+import { Wrapper } from './RegistrationForm.styled';
+
 export const RegistrationForm = () => {
-  return <div>RegistrationForm</div>;
+  return (
+    <Wrapper>
+      <Title name={'Registration'} />
+    </Wrapper>
+  );
 };
