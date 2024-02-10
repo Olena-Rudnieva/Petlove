@@ -1,14 +1,15 @@
 import { Container } from 'components/Container/Container';
 import { PetBlock } from 'components/PetBlock/PetBlock';
 import { RegistrationForm } from 'components/RegistrationForm/RegistrationForm';
-import { Title } from 'components/Title/Title';
+import { Wrapper } from './Registration.styled';
 
 const Registration = () => {
   return (
     <Container>
-      <Title />
-      <RegistrationForm />
-      <PetBlock />
+      <Wrapper>
+        <PetBlock />
+        <RegistrationForm />
+      </Wrapper>
     </Container>
   );
 };

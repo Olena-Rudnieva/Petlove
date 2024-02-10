@@ -1,4 +1,4 @@
-import { workingDays } from 'constants/workingDays';
+import { workingDays } from 'utils/workingDays';
 import {
   Description,
   FriendsItemWrapper,
