@@ -12,4 +12,8 @@ export const RegistrationFormSchema = yup.object().shape({
     .matches(regEx, { message: 'Please enter a valid email' })
     .required('Email is required'),
   password: yup.string().min(7).required('Required'),
+  confirmPassword: yup
+    .string()
+    .oneOf([yup.ref('password'), null], 'Passwords must match')
+    .required('Please confirm your password'),
 });

@@ -1,16 +1,20 @@
 import { Title } from 'components/Title/Title';
 import {
   ButtonWrapper,
+  ErrorIcon,
   ErrorText,
   EyeIconInvisible,
   EyeIconVisible,
   FormWrapper,
   InputWrapper,
+  SuccessIcon,
+  SuccessMessage,
   Text,
   TitleWrapper,
   Wrapper,
 } from './RegistrationForm.styled';
 import { Formik, Field, ErrorMessage } from 'formik';
+import sprite from '../../images/sprite.svg';
 
 import { useState } from 'react';
 import { Button } from 'components/Button/Button';
@@ -24,15 +28,25 @@ const initialValues = {
 
 export const RegistrationForm = () => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+  const [isConfirmPasswordVisible, setIsConfirmPasswordVisible] =
+    useState(false);
+  // const [isPasswordValid, setIsPasswordValid] = useState(false);
 
-  const handleTogglePassword = evt => {
-    evt.preventDefault();
+  const handleTogglePassword = () => {
     setIsPasswordVisible(prevState => !prevState);
   };
 
-  const handleSubmit = ({ email, password }, actions) => {
-    //  handleModalToggle();
+  const handleToggleConfirmPassword = () => {
+    setIsConfirmPasswordVisible(prevState => !prevState);
   };
+
+  const handleSubmit = ({ email, password }, actions) => {};
+
+  // const handleBlur = event => {
+  //   const newPassword = event.target.value;
+  //   const isValid = newPassword.length >= 7;
+  //   setIsPasswordValid(isValid);
+  // };
 
   return (
     <Wrapper>
@@ -45,52 +59,85 @@ export const RegistrationForm = () => {
         onSubmit={handleSubmit}
         validationSchema={RegistrationFormSchema}
       >
-        {({ handleSubmit }) => (
+        {({ handleSubmit, errors, touched }) => (
           <form>
             <FormWrapper>
-              <InputWrapper>
+              <InputWrapper hasError={touched.name && errors.name}>
                 <label>
                   <Field type="text" name="name" placeholder="Name" />
+                  <ErrorIcon hasError={touched.name && errors.name}>
+                    ✕
+                  </ErrorIcon>
+
                   <ErrorMessage name="name" component={ErrorText} />
                 </label>
               </InputWrapper>
 
-              <InputWrapper>
+              <InputWrapper hasError={touched.email && errors.email}>
                 <label>
                   <Field type="email" name="email" placeholder=" Email" />
+                  <ErrorIcon hasError={touched.email && errors.email}>
+                    ✕
+                  </ErrorIcon>
                   <ErrorMessage name="email" component={ErrorText} />
                 </label>
               </InputWrapper>
 
-              <InputWrapper>
+              <InputWrapper
+                hasError={touched.password && errors.password}
+                hasSuccess={touched.password && !errors.password}
+              >
                 <label>
                   <Field
                     type={isPasswordVisible ? 'text' : 'password'}
                     name="password"
                     placeholder=" Password"
+                    // onBlur={handleBlur}
                   />
                   {isPasswordVisible ? (
                     <EyeIconVisible onClick={handleTogglePassword} />
                   ) : (
                     <EyeIconInvisible onClick={handleTogglePassword} />
+                  )}
+                  <ErrorIcon
+                    hasError={touched.password && errors.password}
+                    errorIconRight={true}
+                  >
+                    ✕
+                  </ErrorIcon>
+                  {touched.password && !errors.password && (
+                    <SuccessMessage>Password is secure</SuccessMessage>
+                  )}
+                  {touched.password && !errors.password && (
+                    <SuccessIcon>
+                      <use href={sprite + '#icon-check'}></use>
+                    </SuccessIcon>
                   )}
                   <ErrorMessage name="password" component={ErrorText} />
                 </label>
               </InputWrapper>
 
-              <InputWrapper>
+              <InputWrapper
+                hasError={touched.confirmPassword && errors.confirmPassword}
+              >
                 <label>
                   <Field
-                    type={isPasswordVisible ? 'text' : 'password'}
-                    name="password"
+                    type={isConfirmPasswordVisible ? 'text' : 'password'}
+                    name="confirmPassword"
                     placeholder="Confirm Password"
                   />
-                  {isPasswordVisible ? (
-                    <EyeIconVisible onClick={handleTogglePassword} />
+                  {isConfirmPasswordVisible ? (
+                    <EyeIconVisible onClick={handleToggleConfirmPassword} />
                   ) : (
-                    <EyeIconInvisible onClick={handleTogglePassword} />
+                    <EyeIconInvisible onClick={handleToggleConfirmPassword} />
                   )}
-                  <ErrorMessage name="password" component={ErrorText} />
+                  <ErrorIcon
+                    hasError={touched.confirmPassword && errors.confirmPassword}
+                    errorIconRight={true}
+                  >
+                    ✕
+                  </ErrorIcon>
+                  <ErrorMessage name="confirmPassword" component={ErrorText} />
                 </label>
               </InputWrapper>
             </FormWrapper>

@@ -15,6 +15,7 @@ export const theme = {
     lightGrey: 'rgba(38, 38, 38, 0.20)',
     paleGrey: 'rgba(38, 38, 38, 0.05)',
     red: '#EF2447',
+    green: '#08AA83',
   },
 
   fontWeight: {

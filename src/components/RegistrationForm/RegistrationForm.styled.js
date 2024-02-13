@@ -31,13 +31,6 @@ export const InputWrapper = styled.div`
   position: relative;
   width: 100%;
 
-  /* label {
-    font-size: 16px;
-    color: var(--black);
-    font-weight: 400;
-    line-height: 1.375;
-  } */
-
   input {
     width: 100%;
     padding: 16px;
@@ -45,7 +38,13 @@ export const InputWrapper = styled.div`
     color: ${theme.colors.black};
     font-weight: ${theme.fontWeight.medium};
     line-height: 1.25;
-    border: 1px solid ${theme.colors.lightGrey};
+    border: 1px solid
+      ${props =>
+        props.hasError
+          ? theme.colors.red
+          : props.hasSuccess
+          ? theme.colors.green
+          : theme.colors.lightGrey};
     border-radius: 30px;
     box-sizing: border-box;
     outline: none;
@@ -53,6 +52,10 @@ export const InputWrapper = styled.div`
 
     &:focus {
       border-color: ${theme.colors.accent};
+    }
+
+    .error {
+      border: 1px solid ${theme.colors.red};
     }
   }
 `;
@@ -64,6 +67,27 @@ export const ErrorText = styled.div`
   line-height: 1.1667;
   letter-spacing: -0.36px;
   margin-top: 4px;
+  margin-bottom: 12px;
+`;
+
+export const SuccessMessage = styled.div`
+  color: ${theme.colors.green};
+  font-size: ${theme.fontSizes.xxxs};
+  font-weight: ${theme.fontWeight.medium};
+  line-height: 1.1667;
+  letter-spacing: -0.36px;
+  margin-top: 4px;
+  margin-bottom: 12px;
+`;
+
+export const ErrorIcon = styled.span`
+  position: absolute;
+  top: 15px;
+  right: ${props => (props.errorIconRight ? '50px' : '16px')};
+  font-size: 22px;
+  font-size: ${theme.fontWeight.bold};
+  color: ${theme.colors.red};
+  display: ${props => (props.hasError ? 'block' : 'none')};
 `;
 
 export const EyeIconInvisible = styled(AiOutlineEyeInvisible)`
@@ -89,4 +113,12 @@ export const EyeIconVisible = styled(AiOutlineEye)`
 export const ButtonWrapper = styled.div`
   display: inline-block;
   margin-top: 16px;
+`;
+
+export const SuccessIcon = styled.svg`
+  position: absolute;
+  top: 15px;
+  right: 50px;
+  width: 22px;
+  height: 22px;
 `;
