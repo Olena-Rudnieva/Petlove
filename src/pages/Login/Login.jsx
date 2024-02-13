@@ -1,14 +1,15 @@
 import { Container } from 'components/Container/Container';
 import { LoginForm } from 'components/LoginForm/LoginForm';
 import { PetBlock } from 'components/PetBlock/PetBlock';
-import { Title } from 'components/Title/Title';
+import { Wrapper } from './Login.styled';
 
 const Login = () => {
   return (
     <Container>
-      <Title />
-      <LoginForm />
-      <PetBlock />
+      <Wrapper>
+        <PetBlock />
+        <LoginForm />
+      </Wrapper>
     </Container>
   );
 };

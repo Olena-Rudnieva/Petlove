@@ -7,6 +7,8 @@ import {
   EyeIconVisible,
   FormWrapper,
   InputWrapper,
+  Link,
+  LinkWrapper,
   SuccessIcon,
   SuccessMessage,
   Text,
@@ -30,7 +32,6 @@ export const RegistrationForm = () => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const [isConfirmPasswordVisible, setIsConfirmPasswordVisible] =
     useState(false);
-  // const [isPasswordValid, setIsPasswordValid] = useState(false);
 
   const handleTogglePassword = () => {
     setIsPasswordVisible(prevState => !prevState);
@@ -41,12 +42,6 @@ export const RegistrationForm = () => {
   };
 
   const handleSubmit = ({ email, password }, actions) => {};
-
-  // const handleBlur = event => {
-  //   const newPassword = event.target.value;
-  //   const isValid = newPassword.length >= 7;
-  //   setIsPasswordValid(isValid);
-  // };
 
   return (
     <Wrapper>
@@ -92,7 +87,6 @@ export const RegistrationForm = () => {
                     type={isPasswordVisible ? 'text' : 'password'}
                     name="password"
                     placeholder=" Password"
-                    // onBlur={handleBlur}
                   />
                   {isPasswordVisible ? (
                     <EyeIconVisible onClick={handleTogglePassword} />
@@ -153,6 +147,10 @@ export const RegistrationForm = () => {
           </form>
         )}
       </Formik>
+      <LinkWrapper>
+        <p>Already have an account?</p>
+        <Link to="/login">Login</Link>
+      </LinkWrapper>
     </Wrapper>
   );
 };
