@@ -114,7 +114,7 @@ export const EyeIconVisible = styled(AiOutlineEye)`
 export const ButtonWrapper = styled.div`
   display: inline-block;
   margin-top: 16px;
-  margin-bottom: 16px;
+  margin-bottom: 48px;
 `;
 
 export const SuccessIcon = styled.svg`

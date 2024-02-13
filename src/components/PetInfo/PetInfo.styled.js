@@ -9,7 +9,7 @@ export const InfoWrapper = styled.div`
   height: 121px;
   padding: 16px;
   display: flex;
-
+  align-items: flex-start;
   gap: 8px;
   background-color: ${theme.colors.white};
   border-radius: 20px;
@@ -20,13 +20,15 @@ export const Avatar = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 60px;
-  height: 60px;
+  padding: 14px;
   background-color: ${theme.colors.beige};
   border-radius: 50%;
 `;
 
-export const Image = styled.img``;
+export const Image = styled.img`
+  width: 32px;
+  height: 32px;
+`;
 
 export const TextWrapper = styled.div`
   display: flex;

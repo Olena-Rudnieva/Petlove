@@ -8,25 +8,22 @@ import {
   TextWrapper,
   Title,
 } from './PetInfo.styled';
-import registrationAvatar from '../../images/registrationAvatar.png';
 
-export const PetInfo = () => {
+export const PetInfo = ({ pet }) => {
+  const { avatar, name, birthday, description } = pet;
   return (
     <InfoWrapper>
       <Avatar>
-        <Image src={registrationAvatar} alt="Avatar" />
+        <Image src={avatar} alt="Avatar" />
       </Avatar>
       <div>
         <TextWrapper>
-          <Title>Jack</Title>
+          <Title>{name}</Title>
           <Text>
-            Birthday: <Accent>18.10.2021</Accent>
+            Birthday: <Accent>{birthday}</Accent>
           </Text>
         </TextWrapper>
-        <InfoText>
-          Jack is a gray Persian cat with green eyes. He loves to be pampered
-          and groomed, and enjoys playing with toys.
-        </InfoText>
+        <InfoText>{description}</InfoText>
       </div>
     </InfoWrapper>
   );

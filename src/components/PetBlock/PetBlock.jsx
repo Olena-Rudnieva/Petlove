@@ -1,12 +1,11 @@
 import { PetInfo } from 'components/PetInfo/PetInfo';
 import { Image, Wrapper } from './PetBlock.styled';
-import registrationImg from '../../images/registrationImg.png';
 
-export const PetBlock = () => {
+export const PetBlock = ({ img, pet }) => {
   return (
     <Wrapper>
-      <Image src={registrationImg} alt="Pet" />
-      <PetInfo />
+      <Image src={img} alt="Pet" />
+      <PetInfo pet={pet} />
     </Wrapper>
   );
 };
