@@ -23,8 +23,6 @@ const News = () => {
     topScroll();
   };
 
-  console.log(selectedPage);
-
   useEffect(() => {
     dispatch(fetchNews(selectedPage));
   }, [dispatch, selectedPage]);

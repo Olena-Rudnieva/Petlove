@@ -19,8 +19,6 @@ const Notices = () => {
   const notices = useSelector(selectNotices);
   const totalPages = useSelector(selectTotalPages);
 
-  console.log(selectedPage);
-
   const handlePageChange = e => {
     // console.log(`Selected page: ${page}`);
     // setSelectedPage(page);

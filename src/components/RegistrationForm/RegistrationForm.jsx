@@ -21,6 +21,8 @@ import sprite from '../../images/sprite.svg';
 import { useState } from 'react';
 import { Button } from 'components/Button/Button';
 import { RegistrationFormSchema } from './RegistrationFormShema';
+import { useDispatch } from 'react-redux';
+import { register } from '../../redux/auth/authOperation';
 
 const initialValues = {
   name: '',
@@ -32,6 +34,7 @@ export const RegistrationForm = () => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const [isConfirmPasswordVisible, setIsConfirmPasswordVisible] =
     useState(false);
+  const dispatch = useDispatch();
 
   const handleTogglePassword = () => {
     setIsPasswordVisible(prevState => !prevState);
@@ -41,7 +44,22 @@ export const RegistrationForm = () => {
     setIsConfirmPasswordVisible(prevState => !prevState);
   };
 
-  const handleSubmit = ({ email, password }, actions) => {};
+  const handleSubmit = ({ name, email, password }, { resetForm }) => {
+    console.log('test');
+    console.log({ name, email, password });
+    dispatch(register({ name, email, password }));
+    resetForm();
+
+    // const form = e.currentTarget;
+    // dispatch(
+    //   register({
+    //     name: form.elements.name.value,
+    //     email: form.elements.email.value,
+    //     password: form.elements.password.value,
+    //   })
+    // );
+    // form.reset();
+  };
 
   return (
     <Wrapper>
@@ -55,12 +73,12 @@ export const RegistrationForm = () => {
         validationSchema={RegistrationFormSchema}
       >
         {({ handleSubmit, errors, touched }) => (
-          <form>
+          <form onSubmit={handleSubmit}>
             <FormWrapper>
-              <InputWrapper hasError={touched.name && errors.name}>
+              <InputWrapper haserror={touched.name && errors.name}>
                 <label>
                   <Field type="text" name="name" placeholder="Name" />
-                  <ErrorIcon hasError={touched.name && errors.name}>
+                  <ErrorIcon haserror={touched.name && errors.name}>
                     ✕
                   </ErrorIcon>
 
@@ -68,10 +86,10 @@ export const RegistrationForm = () => {
                 </label>
               </InputWrapper>
 
-              <InputWrapper hasError={touched.email && errors.email}>
+              <InputWrapper haserror={touched.email && errors.email}>
                 <label>
                   <Field type="email" name="email" placeholder=" Email" />
-                  <ErrorIcon hasError={touched.email && errors.email}>
+                  <ErrorIcon haserror={touched.email && errors.email}>
                     ✕
                   </ErrorIcon>
                   <ErrorMessage name="email" component={ErrorText} />
@@ -79,8 +97,8 @@ export const RegistrationForm = () => {
               </InputWrapper>
 
               <InputWrapper
-                hasError={touched.password && errors.password}
-                hasSuccess={touched.password && !errors.password}
+                haserror={touched.password && errors.password}
+                hassuccess={touched.password && !errors.password}
               >
                 <label>
                   <Field
@@ -94,8 +112,8 @@ export const RegistrationForm = () => {
                     <EyeIconInvisible onClick={handleTogglePassword} />
                   )}
                   <ErrorIcon
-                    hasError={touched.password && errors.password}
-                    errorIconRight={true}
+                    haserror={touched.password && errors.password}
+                    erroriconright="true"
                   >
                     ✕
                   </ErrorIcon>
@@ -112,7 +130,7 @@ export const RegistrationForm = () => {
               </InputWrapper>
 
               <InputWrapper
-                hasError={touched.confirmPassword && errors.confirmPassword}
+                haserror={touched.confirmPassword && errors.confirmPassword}
               >
                 <label>
                   <Field
@@ -126,8 +144,8 @@ export const RegistrationForm = () => {
                     <EyeIconInvisible onClick={handleToggleConfirmPassword} />
                   )}
                   <ErrorIcon
-                    hasError={touched.confirmPassword && errors.confirmPassword}
-                    errorIconRight={true}
+                    haserror={touched.confirmPassword && errors.confirmPassword}
+                    erroriconright="true"
                   >
                     ✕
                   </ErrorIcon>
@@ -141,7 +159,7 @@ export const RegistrationForm = () => {
                 width={'424px'}
                 text={'REGISTRATION'}
                 type={'submit'}
-                handleClick={handleSubmit}
+                // handleClick={handleSubmit}
               />
             </ButtonWrapper>
           </form>
