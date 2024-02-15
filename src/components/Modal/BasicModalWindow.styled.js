@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { theme } from 'constants/theme';
 
 export const Backdrop = styled.div`
   position: fixed;
@@ -9,7 +10,7 @@ export const Backdrop = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(18, 20, 23, 0.5);
+  background-color: rgba(38, 38, 38, 0.3);
   z-index: 100;
 `;
 
@@ -20,7 +21,7 @@ export const ModalWrapper = styled.div`
   max-height: 100%;
   justify-content: center;
   border-radius: 24px;
-  background-color: var(--background-white);
+  background-color: ${theme.colors.white};
   margin-left: 10px;
   margin-right: 10px;
 `;

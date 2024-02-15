@@ -3,7 +3,7 @@ import { createPortal } from 'react-dom';
 import { Backdrop, ModalWrapper } from './BasicModalWindow.styled';
 import { CloseButton } from 'components/CloseButton/CloseButton';
 
-const modalRoot = document.querySelector('#modal-root');
+const modalRoot = document.querySelector('#modal');
 
 export const BasicModalWindow = ({ children, handleModalToggle }) => {
   useEffect(() => {

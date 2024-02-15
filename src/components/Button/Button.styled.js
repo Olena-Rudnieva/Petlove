@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { theme } from 'constants/theme';
 
 export const ButtonStyle = styled.button`
@@ -8,8 +8,9 @@ export const ButtonStyle = styled.button`
   letter-spacing: -0.48px;
   background-color: ${theme.colors.accent};
   /* padding: ${({ padding }) => padding}; */
-  padding: 14px 89px;
+  /* padding: 14px 89px; */
   width: ${({ width }) => width};
+  height: ${({ height }) => height};
   color: ${theme.colors.white};
   border-radius: 30px;
   border: none;
@@ -20,4 +21,16 @@ export const ButtonStyle = styled.button`
     color: ${theme.colors.accent};
     background-color: ${theme.colors.beige};
   }
+
+  ${props =>
+    props.specialbackground &&
+    css`
+      color: ${theme.colors.black};
+      background-color: ${theme.colors.paleGrey};
+
+      &:hover,
+      :focus {
+        background-color: ${theme.colors.beige};
+      }
+    `}
 `;

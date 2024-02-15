@@ -1,14 +1,31 @@
+import { useState } from 'react';
 import { UserBar } from '../UserBar/UserBar';
-import { Link, UserNavWrapper } from './UserNav.styled';
+import { UserNavWrapper } from './UserNav.styled';
+import { BasicModalWindow } from 'components/Modal/BasicModalWindow';
+import { ModalApproveAction } from 'components/Modal/ModalApproveAction/ModalApproveAction';
+import { Button } from 'components/Button/Button';
 
 export const UserNav = () => {
+  const [modal, setModal] = useState(false);
+
+  const handleModal = () => {
+    setModal(state => !state);
+  };
   return (
     <UserNavWrapper>
-      {/* <Link to="/register" specialbackground="true">
-        Registration
-      </Link> */}
-      <Link to="/login">Log out</Link>
+      <Button
+        width={'136px'}
+        height={'50px'}
+        text={'Log out'}
+        type={'button'}
+        handleClick={handleModal}
+      />
       <UserBar />
+      {modal && (
+        <BasicModalWindow handleModalToggle={handleModal}>
+          <ModalApproveAction handleModalToggle={handleModal} />
+        </BasicModalWindow>
+      )}
     </UserNavWrapper>
   );
 };

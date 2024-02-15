@@ -17,11 +17,13 @@ import {
 } from './LoginForm.styled';
 import { Formik, Field, ErrorMessage } from 'formik';
 import { LoginFormSchema } from './LoginFormShema.styled';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import sprite from '../../images/sprite.svg';
 import { Button } from 'components/Button/Button';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { logIn } from '../../redux/auth/authOperation';
+import { useNavigate } from 'react-router-dom';
+import { selectIsLoggedIn } from '../../redux/auth/authSelectors';
 
 const initialValues = {
   email: '',
@@ -30,8 +32,9 @@ const initialValues = {
 
 export const LoginForm = () => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
-
+  const navigate = useNavigate();
   const dispatch = useDispatch();
+  const isLoggedIn = useSelector(selectIsLoggedIn);
 
   const handleSubmit = ({ email, password }, { resetForm }) => {
     dispatch(logIn({ email, password }));
@@ -41,6 +44,12 @@ export const LoginForm = () => {
   const handleTogglePassword = () => {
     setIsPasswordVisible(prevState => !prevState);
   };
+
+  useEffect(() => {
+    if (isLoggedIn) {
+      navigate('/profile');
+    }
+  }, [navigate, isLoggedIn]);
 
   return (
     <Wrapper>
@@ -58,10 +67,10 @@ export const LoginForm = () => {
         {({ handleSubmit, errors, touched }) => (
           <form>
             <FormWrapper>
-              <InputWrapper hasError={touched.email && errors.email}>
+              <InputWrapper haserror={touched.email && errors.email}>
                 <label>
                   <Field type="email" name="email" placeholder=" Email" />
-                  <ErrorIcon hasError={touched.email && errors.email}>
+                  <ErrorIcon haserror={touched.email && errors.email}>
                     ✕
                   </ErrorIcon>
                   <ErrorMessage name="email" component={ErrorText} />
@@ -69,7 +78,7 @@ export const LoginForm = () => {
               </InputWrapper>
 
               <InputWrapper
-                hasError={touched.password && errors.password}
+                haserror={touched.password && errors.password}
                 hasSuccess={touched.password && !errors.password}
               >
                 <label>
@@ -84,8 +93,8 @@ export const LoginForm = () => {
                     <EyeIconInvisible onClick={handleTogglePassword} />
                   )}
                   <ErrorIcon
-                    hasError={touched.password && errors.password}
-                    errorIconRight={true}
+                    haserror={touched.password && errors.password}
+                    erroriconright="true"
                   >
                     ✕
                   </ErrorIcon>
@@ -105,6 +114,7 @@ export const LoginForm = () => {
               <Button
                 // padding={'16px 186px'}
                 width={'424px'}
+                height={'52px'}
                 text={'LOG IN'}
                 type={'submit'}
                 handleClick={handleSubmit}

@@ -41,7 +41,7 @@ export const InputWrapper = styled.div`
     line-height: 1.25;
     border: 1px solid
       ${props =>
-        props.hasError
+        props.haserror
           ? theme.colors.red
           : props.hasSuccess
           ? theme.colors.green
@@ -84,11 +84,11 @@ export const SuccessMessage = styled.div`
 export const ErrorIcon = styled.span`
   position: absolute;
   top: 15px;
-  right: ${props => (props.errorIconRight ? '50px' : '16px')};
+  right: ${props => (props.erroriconright ? '50px' : '16px')};
   font-size: 22px;
   font-size: ${theme.fontWeight.bold};
   color: ${theme.colors.red};
-  display: ${props => (props.hasError ? 'block' : 'none')};
+  display: ${props => (props.haserror ? 'block' : 'none')};
 `;
 
 export const EyeIconInvisible = styled(AiOutlineEyeInvisible)`

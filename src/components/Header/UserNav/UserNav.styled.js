@@ -5,7 +5,6 @@ import styled from 'styled-components';
 export const UserNavWrapper = styled.div`
   display: flex;
   gap: 8px;
-  /* margin-right: 32px; */
 `;
 
 export const Link = styled(NavLink)`

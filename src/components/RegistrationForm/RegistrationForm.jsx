@@ -18,11 +18,13 @@ import {
 import { Formik, Field, ErrorMessage } from 'formik';
 import sprite from '../../images/sprite.svg';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Button } from 'components/Button/Button';
 import { RegistrationFormSchema } from './RegistrationFormShema';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { register } from '../../redux/auth/authOperation';
+import { useNavigate } from 'react-router-dom';
+import { selectIsLoggedIn } from '../../redux/auth/authSelectors';
 
 const initialValues = {
   name: '',
@@ -35,6 +37,8 @@ export const RegistrationForm = () => {
   const [isConfirmPasswordVisible, setIsConfirmPasswordVisible] =
     useState(false);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const isLoggedIn = useSelector(selectIsLoggedIn);
 
   const handleTogglePassword = () => {
     setIsPasswordVisible(prevState => !prevState);
@@ -48,6 +52,12 @@ export const RegistrationForm = () => {
     dispatch(register({ name, email, password }));
     resetForm();
   };
+
+  useEffect(() => {
+    if (isLoggedIn) {
+      navigate('/profile');
+    }
+  }, [navigate, isLoggedIn]);
 
   return (
     <Wrapper>
@@ -145,6 +155,7 @@ export const RegistrationForm = () => {
               <Button
                 // padding={'16px 186px'}
                 width={'424px'}
+                height={'52px'}
                 text={'REGISTRATION'}
                 type={'submit'}
                 // handleClick={handleSubmit}
