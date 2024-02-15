@@ -21,6 +21,7 @@ export const AvatarLink = styled(NavLink)`
 export const UserIcon = styled.svg`
   width: 24px;
   height: 24px;
+  fill: ${theme.colors.accent};
 `;
 
 export const Text = styled.p`

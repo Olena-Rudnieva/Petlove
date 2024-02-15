@@ -33,4 +33,16 @@ export const ButtonStyle = styled.button`
         background-color: ${theme.colors.beige};
       }
     `}
+
+  ${props =>
+    props.whitebackground &&
+    css`
+      color: ${theme.colors.black};
+      background-color: ${theme.colors.white};
+
+      &:hover,
+      :focus {
+        background-color: ${theme.colors.beige};
+      }
+    `}
 `;

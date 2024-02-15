@@ -7,6 +7,7 @@ export const Button = ({
   text,
   handleClick,
   specialbackground,
+  whitebackground,
 }) => {
   return (
     <ButtonStyle
@@ -15,6 +16,7 @@ export const Button = ({
       height={height}
       onClick={handleClick}
       specialbackground={specialbackground}
+      whitebackground={whitebackground}
     >
       {text}
     </ButtonStyle>
