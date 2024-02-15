@@ -20,16 +20,23 @@ import { LoginFormSchema } from './LoginFormShema.styled';
 import { useState } from 'react';
 import sprite from '../../images/sprite.svg';
 import { Button } from 'components/Button/Button';
+import { useDispatch } from 'react-redux';
+import { logIn } from '../../redux/auth/authOperation';
 
 const initialValues = {
   email: '',
   password: '',
 };
 
-const handleSubmit = ({ email, password }, actions) => {};
-
 export const LoginForm = () => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+
+  const dispatch = useDispatch();
+
+  const handleSubmit = ({ email, password }, { resetForm }) => {
+    dispatch(logIn({ email, password }));
+    resetForm();
+  };
 
   const handleTogglePassword = () => {
     setIsPasswordVisible(prevState => !prevState);

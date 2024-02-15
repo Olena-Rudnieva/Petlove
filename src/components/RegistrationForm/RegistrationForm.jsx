@@ -45,20 +45,8 @@ export const RegistrationForm = () => {
   };
 
   const handleSubmit = ({ name, email, password }, { resetForm }) => {
-    console.log('test');
-    console.log({ name, email, password });
     dispatch(register({ name, email, password }));
     resetForm();
-
-    // const form = e.currentTarget;
-    // dispatch(
-    //   register({
-    //     name: form.elements.name.value,
-    //     email: form.elements.email.value,
-    //     password: form.elements.password.value,
-    //   })
-    // );
-    // form.reset();
   };
 
   return (
