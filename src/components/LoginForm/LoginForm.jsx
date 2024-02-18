@@ -79,7 +79,7 @@ export const LoginForm = () => {
 
               <InputWrapper
                 haserror={touched.password && errors.password}
-                hasSuccess={touched.password && !errors.password}
+                hassuccess={touched.password && !errors.password}
               >
                 <label>
                   <Field

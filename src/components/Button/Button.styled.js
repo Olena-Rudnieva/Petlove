@@ -45,4 +45,17 @@ export const ButtonStyle = styled.button`
         background-color: ${theme.colors.beige};
       }
     `}
+
+    ${props =>
+    props.beigebackground &&
+    css`
+      color: ${theme.colors.accent};
+      background-color: ${theme.colors.beige};
+
+      &:hover,
+      :focus {
+        color: ${theme.colors.white};
+        background-color: ${theme.colors.accent};
+      }
+    `}
 `;

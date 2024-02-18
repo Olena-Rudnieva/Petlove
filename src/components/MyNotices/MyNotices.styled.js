@@ -15,8 +15,8 @@ export const ButtonWrapper = styled.div`
 `;
 
 export const TextWrapper = styled.div`
-  /* padding: 180px 135px 135px 103px; */
-  text-align: center;
+  padding: 180px 135px 135px 103px;
+  /* text-align: center; */
 `;
 
 export const Text = styled.p`

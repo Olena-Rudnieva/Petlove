@@ -49,7 +49,7 @@ export const InputWrapper = styled.div`
     border-radius: 30px;
     box-sizing: border-box;
     outline: none;
-    transition: border-color 0.3s;
+    transition: border-color ${theme.transition};
 
     &:focus {
       border-color: ${theme.colors.accent};
