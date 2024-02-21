@@ -1,17 +1,17 @@
-import sprite from '../../images/sprite.svg';
-import { useDispatch, useSelector } from 'react-redux';
+// import sprite from '../../images/sprite.svg';
+// import { useDispatch, useSelector } from 'react-redux';
 import {
-  Image,
-  ImageWrapper,
-  PetIcon,
+  // Image,
+  // ImageWrapper,
+  // PetIcon,
   Text,
   Title,
   TitleWrapper,
   Wrapper,
 } from './AddPetForm.styled';
 import { GenderSelection } from './GenderSelection/GenderSelection';
-import { Formik, Field, ErrorMessage, Form } from 'formik';
-import { Avatar } from 'components/Avatar/Avatar';
+import { Formik, Form } from 'formik';
+// import { Avatar } from 'components/Avatar/Avatar';
 
 const initialValues = {
   sex: '',

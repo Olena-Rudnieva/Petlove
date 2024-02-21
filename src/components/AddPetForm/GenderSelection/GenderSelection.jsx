@@ -1,7 +1,6 @@
 import {
   FemaleIcon,
   MaleIcon,
-  MixedIcon,
   MultipleIcon,
   SelectionWrapper,
   StyledRadioWrapper,

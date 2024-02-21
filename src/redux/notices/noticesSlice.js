@@ -1,9 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import {
-  addFavoriteNotices,
-  addFavoritesNotices,
+  // addFavoriteNotices,
   fetchNotices,
-  removeFavoritesNotices,
 } from './noticesOperations';
 
 export const noticesSlice = createSlice({

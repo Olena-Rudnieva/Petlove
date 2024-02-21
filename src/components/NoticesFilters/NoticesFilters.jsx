@@ -11,10 +11,6 @@ export const NoticesFilters = () => {
   const [gender, setGender] = useState({ value: 'all', label: 'By gender' });
   const [type, setType] = useState({ value: 'all', label: 'By type' });
 
-  // const dispatch = useDispatch();
-  // const brands = useSelector(selectBrands);
-  // const prices = useSelector(selectPrice);
-
   const reset = () => {
     setCategory({ value: 'all', label: 'Category' });
     setGender({ value: 'all', label: 'By gender' });
@@ -25,21 +21,6 @@ export const NoticesFilters = () => {
     e.preventDefault();
     reset();
   };
-
-  // const handleSubmit = e => {
-  //   e.preventDefault();
-  //   const data = {
-  //     brand: brand.value,
-  //     price: price.value,
-  //     mileage: { min: mileage.min, max: mileage.max },
-  //   };
-  //   dispatch(addFilter(data));
-  // };
-
-  // const handleRemoveFilter = () => {
-  //   dispatch(removeFilter());
-  //   reset();
-  // };
 
   return (
     <>
