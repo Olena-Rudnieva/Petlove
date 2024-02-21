@@ -1,6 +1,5 @@
 import { theme } from 'constants/theme';
 import styled from 'styled-components';
-import { NavLink } from 'react-router-dom';
 
 export const Wrapper = styled.div`
   padding: 60px 80px;
