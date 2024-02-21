@@ -12,7 +12,7 @@ export const PetsBlock = () => {
     <Wrapper>
       <UpperWrapper>
         <Title>My pets</Title>
-        <Link to="/login">
+        <Link to="/add-pet">
           Add pet
           <PlusIcon>
             <use href={sprite + '#icon-plus'}></use>

@@ -1,6 +1,10 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { BASE_URL, NOTICES_URL } from 'constants/api';
+import {
+  ADD_FAVORITES_NOTICES_URL,
+  BASE_URL,
+  NOTICES_URL,
+} from 'constants/api';
 
 axios.defaults.baseURL = `${BASE_URL}`;
 
@@ -9,6 +13,30 @@ export const fetchNotices = createAsyncThunk(
   async (pageNumber, thunkAPI) => {
     try {
       const response = await axios.get(`${NOTICES_URL}?page=${pageNumber}`);
+      return response.data;
+    } catch (e) {
+      return thunkAPI.rejectWithValue(e.message);
+    }
+  }
+);
+
+export const addFavoriteNotices = createAsyncThunk(
+  'notices/addFavoritesNotices',
+  async (id, thunkAPI) => {
+    try {
+      const response = await axios.post(`${ADD_FAVORITES_NOTICES_URL}/${id}`);
+      return response.data;
+    } catch (e) {
+      return thunkAPI.rejectWithValue(e.message);
+    }
+  }
+);
+
+export const removeFavoriteNotices = createAsyncThunk(
+  'notices/removeFavoritesNotices',
+  async (id, thunkAPI) => {
+    try {
+      const response = await axios.delete(`${ADD_FAVORITES_NOTICES_URL}${id}`);
       return response.data;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);

@@ -16,7 +16,7 @@ export const UserNav = () => {
       <Button
         width={'136px'}
         height={'50px'}
-        text={'Log out'}
+        text={'LOG OUT'}
         type={'button'}
         handleClick={handleModal}
       />
