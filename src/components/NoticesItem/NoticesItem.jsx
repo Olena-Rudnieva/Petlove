@@ -29,7 +29,7 @@ export const NoticesItem = ({ item }) => {
           type={'button'}
           // handleClick={handleModal}
         />
-        <FavoritesHeart notice={item} />
+        <FavoritesHeart item={item} />
       </ButtonWrapper>
     </NoticesItemWrapper>
   );

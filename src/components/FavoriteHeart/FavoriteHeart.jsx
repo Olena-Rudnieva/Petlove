@@ -1,32 +1,40 @@
 import { Heart, IconEmpty, IconFavorite } from './FavoriteHeart.styled';
 import sprite from '../../images/sprite.svg';
-import { useDispatch, useSelector } from 'react-redux';
-import { selectIsLoggedIn, selectUser } from '../../redux/auth/authSelectors';
-import {
-  addFavoriteNotices,
-  removeFavoriteNotices,
-} from '../../redux/notices/noticesOperations';
+import { useSelector } from 'react-redux';
+import { selectIsLoggedIn } from '../../redux/auth/authSelectors';
+import // addFavoriteNotices,
+// removeFavoriteNotices,
+'../../redux/notices/noticesOperations';
+import { selectFavorites } from '../../redux/notices/noticesSelectors';
+import { useEffect } from 'react';
 
 // import { toast } from 'react-toastify';
 
-export const FavoritesHeart = ({ notice }) => {
-  const dispatch = useDispatch();
+export const FavoritesHeart = ({ item }) => {
+  // const dispatch = useDispatch();
   const isLoggedIn = useSelector(selectIsLoggedIn);
-  const user = useSelector(selectUser);
-  const favorites = user.noticesFavorites;
+
+  const favorites = useSelector(selectFavorites);
   console.log(favorites);
-  console.log(notice);
+
+  const isFavorite = false;
+
   // const isFavorite = favorites?.some(
-  //   favoritePet => notice._id === favoritePet.id
+  //   favoritePet => item._id === favoritePet._id
   // );
 
-  const isFavorite = true;
+  useEffect(() => {
+    // const updatedIsFavorite = favorites?.some(
+    //   favoritePet => item._id === favoritePet._id
+    // );
+    // setIsFavorite(updatedIsFavorite);
+  }, [favorites, item._id]);
 
   const handleToggleHeart = () => {
     if (isLoggedIn) {
-      isFavorite
-        ? dispatch(removeFavoriteNotices(notice.id))
-        : dispatch(addFavoriteNotices('6589436d05a6bcd9b9379422'));
+      // isFavorite
+      //   ? dispatch(removeFavoriteNotices(item._id))
+      //   : dispatch(addFavoriteNotices(item._id));
       // toast.success(
       //   isFavorite ? 'Removed from favorites' : 'Added to favorites'
       // );
@@ -34,6 +42,7 @@ export const FavoritesHeart = ({ notice }) => {
       console.log('Test');
       // toast.warn('Please log in to use this functionality.');
     }
+    console.log(item._id);
   };
 
   return (

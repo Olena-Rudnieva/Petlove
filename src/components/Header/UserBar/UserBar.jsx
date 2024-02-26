@@ -14,7 +14,7 @@ export const UserBar = () => {
           <use href={sprite + '#icon-user'}></use>
         </UserIcon>
       </AvatarLink>
-      <Text>{user.name}</Text>
+      <Text>{user?.name}</Text>
     </UserBarWrapper>
   );
 };

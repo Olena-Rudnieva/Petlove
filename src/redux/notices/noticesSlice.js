@@ -1,8 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import {
-  // addFavoriteNotices,
-  fetchNotices,
-} from './noticesOperations';
+import { addFavoriteNotices, fetchNotices } from './noticesOperations';
 
 export const noticesSlice = createSlice({
   name: 'notices',
@@ -28,18 +25,18 @@ export const noticesSlice = createSlice({
       state.isLoading = false;
       state.error = action.payload;
     });
-    // builder.addCase(addFavoritesNotices.pending, state => {
-    //   state.isLoading = true;
-    // });
-    // builder.addCase(addFavoriteNotices.fulfilled, (state, action) => {
-    //   state.isLoading = false;
-    //   state.error = null;
-    //   state.noticesFavorites = action.payload.results;
-    // });
-    // builder.addCase(addFavoritesNotices.rejected, (state, action) => {
-    //   state.isLoading = false;
-    //   state.error = action.payload;
-    // });
+    builder.addCase(addFavoriteNotices.pending, state => {
+      state.isLoading = true;
+    });
+    builder.addCase(addFavoriteNotices.fulfilled, (state, action) => {
+      state.isLoading = false;
+      state.error = null;
+      state.noticesFavorites = action.payload;
+    });
+    builder.addCase(addFavoriteNotices.rejected, (state, action) => {
+      state.isLoading = false;
+      state.error = action.payload;
+    });
     // builder.addCase(removeFavoritesNotices.pending, state => {
     //   state.isLoading = true;
     // });

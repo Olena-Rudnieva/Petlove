@@ -17,7 +17,8 @@ export const IconEmpty = styled.svg`
   width: 18px;
   height: 18px;
   fill: transparent;
-  transition: transform ${theme.transition};
+  stroke: ${theme.colors.accent};
+  transition: transform ${theme.transition}, fill ${theme.transition};
 
   &:hover {
     transform: scale(1.05);
